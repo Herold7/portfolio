@@ -1,45 +1,40 @@
-import { useState, useEffect } from 'react'
+// import { useState, useEffect } from 'react'
+import Footer from "./components/footer";
+import Form from "./components/form";
+import Nav from "./components/nav";
 import "./style.css";
 
-// Import du logo pour interpolation dans JSX
-
-
 // Nos composants
-import nav from "./components/nav";
-import form from "./components/form";
-import footer from "./components/footer";
+
 
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  // const [count, setCount] = useState(0)
   
   return (
-   
-      <body class="d-flex flex-column">
+    <>
         <main class="flex-shrink-0">
-        <nav nav={nav} />
-        <section className="py-5">
-                <div className="container px-5">
-        <form form={form} />
+        <Nav />
+                <section className="py-5">
+            <div className="container px-5">
+                <div className="bg-light rounded-4 py-5 px-4 px-md-5">
+                    <div className="text-center mb-5">
+                        <div className="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 mb-3"><i className="bi bi-envelope"></i></div>
+                        <h1 className="fw-bolder">Get in touch</h1>
+                        <p className="lead fw-normal text-muted mb-0">Let's work together!</p>
+                    </div>
+                    <div className="row gx-5 justify-content-center">
+                        <div className="col-lg-8 col-xl-6">
+        <Form />
         </div>
-            </section>
-
+                    </div>
+                </div>
+            </div>
+        </section>
         </main>
-        <footer footer={footer} />
+        <Footer />
 
-        {/* <!-- Bootstrap core JS--> */}
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        {/* <!-- Core theme JS--> */}
-        <script src="js/scripts.js"></script>
-        {/* <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *--> */}
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-
-    </body>
-   
+        </>
   )
 }
 
